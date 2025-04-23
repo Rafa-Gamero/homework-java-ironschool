@@ -8,9 +8,9 @@ public class Course {
     private Teacher teacher;
 
     // constructor crear nuevo curso
-
+    private static int idCounter = 1000;
     public Course(String name, double price) {
-        this.courseId = UUID.randomUUID().toString().substring(0, 8); // Genera un ID único
+       this.courseId = "C" + idCounter++; // Genera un ID único
         this.name = name;
         this.price = price;
         this.money_earned = 0.0; // De primeras no hay dinero ganado

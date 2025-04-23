@@ -5,8 +5,9 @@ public class Teacher {
     private String name;
     private double salary;
 
+    private static int idCounter = 1000;
     public Teacher(String name, double salary) {
-        this.teacherId = UUID.randomUUID().toString().substring(0, 8);
+        this.teacherId = "T" + idCounter++;
         this.name = name;
         this.salary = salary;
     }

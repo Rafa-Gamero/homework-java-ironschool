@@ -6,18 +6,16 @@ public class Student {
     private String email;
     private Course course;  // Nullable - represents the course this student is enrolled in
 
-    // Static counter for auto-generating IDs
+
     private static int idCounter = 1000;
 
-    /**
-     * Parameterized constructor that takes name, address and email
-     */
+
     public Student(String name, String address, String email) {
-        this.studentId = "S" + idCounter++;  // Auto-generate ID with prefix 'S'
+        this.studentId = "S" + idCounter++;
         this.name = name;
         this.address = address;
         this.email = email;
-        this.course = null;  // Initially, student is not enrolled in any course
+        this.course = null;
     }
 
     // Getter methods
@@ -58,21 +56,16 @@ public class Student {
         this.course = course;
     }
 
-    /**
-     * Enrolls this student in a course
-     * @param course The course to enroll in
-     */
+
     public void enrollInCourse(Course course) {
         this.course = course;
         if (course != null) {
-            // Update the money earned by this course based on its price
+
             course.setMoney_earned(course.getMoney_earned() + course.getPrice());
         }
     }
 
-    /**
-     * Returns a string representation of the student
-     */
+
     @Override
     public String toString() {
         String courseInfo = (course != null) ? course.getName() : "Not enrolled";
